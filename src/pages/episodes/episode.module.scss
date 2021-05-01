@@ -1,7 +1,14 @@
 .episode {
   max-width: 45rem;
-  padding: 3rem 2rem;
+  height: calc(100vh - 6.5rem);
   margin: 0 auto;
+
+  padding: 3rem 4rem 8rem;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .thumbnailContainer {
     position: relative;
@@ -81,6 +88,28 @@
 
     p {
       margin: 1.5rem 0;
+    }
+  }
+}
+
+@media (max-width: 724px) {
+  .episode {
+    .thumbnailContainer {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        height: 7rem;
+      }
+
+      button {
+        position: relative;
+
+        img {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
     }
   }
 }
