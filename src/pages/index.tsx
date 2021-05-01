@@ -55,7 +55,7 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
               </div>
 
               <div className={styles.episodeDetails}>
-                <Link href={`/episodes/${episode.id}`}>
+                <Link href={`/episodes/${index}`}>
                   <a>{episode.title}</a>
                 </Link>
                 <p>{episode.members}</p>
@@ -101,7 +101,7 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
                   />
                 </td>
                 <td>
-                  <Link href={`/episodes/${episode.id}`}>
+                  <Link href={`/episodes/${index + latestEpisodes.length}`}>
                     <a>{episode.title}</a>
                   </Link>
                 </td>
