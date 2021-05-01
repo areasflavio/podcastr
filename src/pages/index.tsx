@@ -55,7 +55,7 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
               </div>
 
               <div className={styles.episodeDetails}>
-                <Link href={`/episodes/${index}`}>
+                <Link href={`/episodes/${episode.id}`}>
                   <a>{episode.title}</a>
                 </Link>
                 <p>{episode.members}</p>
@@ -101,7 +101,7 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
                   />
                 </td>
                 <td>
-                  <Link href={`/episodes/${index + latestEpisodes.length}`}>
+                  <Link href={`/episodes/${episode.id}`}>
                     <a>{episode.title}</a>
                   </Link>
                 </td>
@@ -128,13 +128,7 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await api.get('episodes', {
-    params: {
-      _limit: 12,
-      _sort: 'published_at',
-      _order: 'desc',
-    },
-  });
+  const response = await api.get('episodes');
 
   const episodes = response.data.map((episode) => {
     return {

@@ -12,6 +12,19 @@ import { usePlayer } from '../../contexts/PlayerContext';
 
 import styles from './episode.module.scss';
 
+const slugs = [
+  { slug: 'a-importancia-da-contribuicao-em-open-source' },
+  { slug: 'uma-conversa-sobre-programacao-funcional-e-orientacao-a-objetos' },
+  { slug: 'barreiras-e-solucoes-propostas-por-micro-servicos' },
+  { slug: 'aplicacao-de-arquiteturas-mvc-e-clean-architecture-na-pratica' },
+  { slug: 'entrevista-jose-valim-criador-do-elixir' },
+  { slug: 'o-que-e-ui-ux' },
+  { slug: 'como-virar-lider-desenvolvimento' },
+  { slug: 'comunidades-e-tecnologia' },
+  { slug: 'typescript-vale-a-pena' },
+  { slug: 'estrategias-de-autenticacao-jwt-oauth' },
+];
+
 type Episode = {
   id: string;
   title: string;
@@ -72,13 +85,7 @@ export default function Episode({ episode }: EpisodeProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await api.get('episodes', {
-    params: {
-      _limit: 2,
-      _sort: 'published_at',
-      _order: 'desc',
-    },
-  });
+  const response = await api.get('episodes');
 
   const paths = response.data.map((episode: Episode) => {
     return {
@@ -97,7 +104,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params;
 
-  const response = await api.get(`episodes/${slug}`);
+  const index = slugs.findIndex((item) => item.slug === slug);
+
+  const response = await api.get(`episodes/${index}`);
 
   const episode = {
     id: response.data.id,
