@@ -1,7 +1,15 @@
 .appWrapper {
   display: flex;
 
+  position: relative;
+
   main {
     flex: 1;
+  }
+}
+
+@media (max-width: 1480px) {
+  .appWrapper {
+    flex-direction: column;
   }
 }

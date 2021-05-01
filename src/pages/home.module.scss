@@ -177,3 +177,108 @@
     }
   }
 }
+
+@media (max-width: 1700px) {
+  .latestEpisodes {
+    .episodeThumbnail {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1480px) {
+  .allEpisodes {
+    padding-bottom: 8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .latestEpisodes {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .allEpisodes {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    table {
+      td:nth-child(2),
+      td:nth-child(3) {
+        max-width: 20rem;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      thead {
+        th:first-child {
+          display: none;
+        }
+      }
+
+      tbody {
+        td:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 964px) {
+  .allEpisodes {
+    table {
+      thead {
+        th:nth-child(4) {
+          display: none;
+        }
+      }
+
+      tbody {
+        td:nth-child(4) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 944px) {
+  .allEpisodes {
+    padding-bottom: 10rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .latestEpisodes {
+    ul {
+      width: 100%;
+    }
+  }
+
+  .allEpisodes {
+    table {
+      td {
+        max-width: 100%;
+      }
+
+      thead {
+        th:nth-child(3) {
+          display: none;
+        }
+      }
+
+      tbody {
+        td:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+  }
+}

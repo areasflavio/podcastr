@@ -143,3 +143,99 @@
     }
   }
 }
+
+@media (max-width: 1480px) {
+  .playerContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    height: 6.5rem;
+    width: 100%;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 2rem 4rem;
+
+    header {
+      margin-right: 1rem;
+    }
+
+    footer {
+      display: flex;
+      flex: 1;
+
+      justify-content: space-around;
+
+      margin-left: 1rem;
+    }
+  }
+
+  .emptyPlayer {
+    display: none;
+
+    align-items: center;
+  }
+
+  .currentEpisode {
+    max-width: 32%;
+
+    .episodeThumbnail,
+    span {
+      display: none;
+    }
+
+    strong {
+      margin: 0;
+
+      font-size: 1rem;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .progress {
+    width: 100%;
+  }
+
+  .buttons {
+    margin: 0 0 0 1rem;
+  }
+}
+
+@media (max-width: 944px) {
+  .playerContainer {
+    flex-direction: column;
+
+    height: 8.2rem;
+
+    padding: 1rem 4rem;
+
+    header {
+      display: none;
+    }
+  }
+
+  .currentEpisode {
+    max-width: 100%;
+
+    strong {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .buttons {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 484px) {
+  .buttons {
+    gap: 0.5rem;
+  }
+}

@@ -26,3 +26,11 @@
     text-transform: capitalize;
   }
 }
+
+@media (max-width: 664px) {
+  .headerContainer {
+    p {
+      display: none;
+    }
+  }
+}
